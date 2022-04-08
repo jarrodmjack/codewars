@@ -42,7 +42,7 @@ Explanation:
 //           console.log(sum - divisor)
 //     }
 
-   
+
 //   }
 
 //   maxMultiple(37, 200)
@@ -175,7 +175,7 @@ You can assume all values in the array are numbers.
 //      }
 //     }
 //     return sum === 0 ? true : false
-    
+
 // }
 
 // console.log(smallEnough([1,9,4,5,5,5,1,0,0,1,5], 7))
@@ -302,3 +302,51 @@ Explanation:
 
 
 
+
+
+
+
+
+
+// function findEvenIndex(arr)
+// {
+//   var left = 0, right = arr.reduce(function(pv, cv) { return pv + cv; }, 0);
+//   for(var i = 0; i < arr.length; i++) {
+//       if(i > 0) left += arr[i-1];
+//       right -= arr[i];
+
+//       if(left == right) return i;
+//   }
+
+//   return -1;
+// }
+
+
+
+function findEvenIndex(arr) {
+    // creating variable to store left side of array
+    let left = 0;
+    // creating variable to store right side sum
+    let right = arr.reduce((acc, c) => acc + c)
+    /* loop through array length, if i is greater than 0 
+    left plus/equals array item - 1
+    right -= array item 
+    doing this on each loop iteration makes the left sum become greater as
+    the right sum becomes smaller due to it looping through the length
+    of the array
+    */
+    for (let i = 0; i < arr.length; i++) {
+        if (i > 0) left += arr[i - 1]
+        right -= arr[i]
+
+        // if left is equal to right (sum on left is same as sum on right), return index 
+
+        if (left == right) return i;
+
+    }
+
+    // else if no index creates an even sum, return -1
+    return -1
+}
+
+console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1])) // --> 3
