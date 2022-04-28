@@ -22,18 +22,18 @@ A string consists of lowercase latin letters, digits and symbols.
 */
 
 
-function reverseLetter(str) {
-   let arr = str.split('').filter(item => isNaN(item))
-//    arr.forEach(item => {
-//        if(){
-//            console.log(item)
-//        }else{
-//            console.log('not string')
-//        }
-//    });
-let str2 = arr.reverse().join('')
-let filterSpecChar = str2.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-console.log(filterSpecChar)
-   }
+// function reverseLetter(str) {
+//    let arr = str.split('').filter(item => isNaN(item))
+// //    arr.forEach(item => {
+// //        if(){
+// //            console.log(item)
+// //        }else{
+// //            console.log('not string')
+// //        }
+// //    });
+// let str2 = arr.reverse().join('')
+// let filterSpecChar = str2.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+// console.log(filterSpecChar)
+//    }
 
-   reverseLetter("ultr53o@n")
+//    reverseLetter("ultr53o@n")
