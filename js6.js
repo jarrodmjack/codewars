@@ -213,18 +213,18 @@ Your harried co-workers are looking to you for a solution to take this garbled t
 
 
 
-function stringClean(s){
-    if(!s){
-        console.log('')
-    }
-  let arr = s.split('')
-  let newArr = arr.filter(item => !Number(item) && item !== '0')
-  console.log(newArr)
-    // console.log(newArr.filter(item => item !== '0'))
-}
+// function stringClean(s){
+//     if(!s){
+//         console.log('')
+//     }
+//   let arr = s.split('')
+//   let newArr = arr.filter(item => !Number(item) && item !== '0')
+//   console.log(newArr)
+//     // console.log(newArr.filter(item => item !== '0'))
+// }
 
 
-stringClean("")
+// stringClean("")
 
 
 
