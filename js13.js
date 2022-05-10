@@ -227,18 +227,18 @@ Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" sp
 
 
 */
-function spinWords(string){
-    let arr = string.split(' ').map(item => {
-        return item.length >= 5 ? item.split('').reverse().join('') : item
+// function spinWords(string){
+//     let arr = string.split(' ').map(item => {
+//         return item.length >= 5 ? item.split('').reverse().join('') : item
   
-    })
+//     })
 
-    console.log(arr)
+//     console.log(arr)
 
-  }
+//   }
 
 
-  spinWords("Hey fellow warriors")
+//   spinWords("Hey fellow warriors")
 
 
 
