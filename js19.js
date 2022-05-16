@@ -71,20 +71,20 @@ Note : The last element 2 is greater than the sum of its right elements (abstrac
 
 
 
-// function arrayLeaders(numbers){
-//     // create variable for new array to store leaders
-//     let arr = []
+function arrayLeaders(numbers){
+    // create variable for new array to store leaders
+    let arr = []
     
-//     // loop through the array
-// //    numbers.forEach(item => console.log(item))
-// for(let i = 0; i < numbers.length - 1; i++){
-//     // console.log(numbers.slice(i+1))
-//     if(numbers[i] > numbers.slice(i+1).reduce((acc, c) => acc + c)){
-//         arr.push(numbers[i])
-//     }else{
-//         console.log('No less')
-//     }
-// }
+    // loop through the array
+//    numbers.forEach(item => console.log(item))
+for(let i = 0; i < numbers.length - 1; i++){
+    // console.log(numbers.slice(i+1)) // using slice to compare the sum for the rest of the array
+    if(numbers[i] > numbers.slice(i+1).reduce((acc, c) => acc + c)){
+        arr.push(numbers[i])
+    }else{
+        console.log('No less')
+    }
+}
 
 //     if(numbers[numbers.length - 1] > 0){
 //         arr.push(numbers[numbers.length - 1])
