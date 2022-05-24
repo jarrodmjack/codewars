@@ -41,33 +41,33 @@ Harry wins
 */
 
 
-// fighter class
-function Fighter(name, health, damagePerAttack) {
-    this.name = name;
-    this.health = health;
-    this.damagePerAttack = damagePerAttack;
-    this.toString = function() { return this.name; }
-}
+// // fighter class
+// function Fighter(name, health, damagePerAttack) {
+//     this.name = name;
+//     this.health = health;
+//     this.damagePerAttack = damagePerAttack;
+//     this.toString = function() { return this.name; }
+// }
 
-let red = new Fighter('Red', 10, 3) //red has 3 attack
-let blue = new Fighter('Blue', 10, 1) //blue has 1 attack
+// let red = new Fighter('Red', 10, 3) //red has 3 attack
+// let blue = new Fighter('Blue', 10, 1) //blue has 1 attack
 
-// function to declare winner takes in both fighters and first attacker
-function declareWinner(fighter1, fighter2, firstAttacker){
-    // creating variables to store end result for health / damagePerAttack
-    let fighter1Hp = fighter1.health / fighter2.damagePerAttack
-    let fighter2Hp = fighter2.health / fighter1.damagePerAttack
-    // conditional for IF one fighters HP is greater than the other
-    if(fighter1Hp > fighter2Hp){
-        return fighter1.name
-    }else if(fighter2Hp > fighter1Hp){
-        return fighter2.name
-    }else{
-        return firstAttacker
-    }
-}
+// // function to declare winner takes in both fighters and first attacker
+// function declareWinner(fighter1, fighter2, firstAttacker){
+//     // creating variables to store end result for health / damagePerAttack
+//     let fighter1Hp = fighter1.health / fighter2.damagePerAttack
+//     let fighter2Hp = fighter2.health / fighter1.damagePerAttack
+//     // conditional for IF one fighters HP is greater than the other
+//     if(fighter1Hp > fighter2Hp){
+//         return fighter1.name
+//     }else if(fighter2Hp > fighter1Hp){
+//         return fighter2.name
+//     }else{
+//         return firstAttacker
+//     }
+// }
 
-  console.log(declareWinner(red, blue, red)) // ------ > red
+//   console.log(declareWinner(red, blue, red)) // ------ > red
 
 
 // Create an instance of each fighter. 
@@ -83,3 +83,59 @@ function declareWinner(fighter1, fighter2, firstAttacker){
 
 
 
+
+
+
+
+
+
+
+
+/*
+Given an array of numbers (in string format), you must return a string. The numbers correspond to the letters of the alphabet in reverse order: a=26, z=1 etc. You should also account for '!', '?' and ' ' that are represented by '27', '28' and '29' respectively.
+
+All inputs will be valid.
+*/
+
+// PREP
+// I will be given an array of numbers, I must return a string where the numbers given correspond with the letters of the alphabet. 
+
+// P: all inputs will be valid so may need to test for gachas. Numbers need to correspond with position of letters in alphabet
+// do I need to test for 0 values?
+// '!' = 27, '?' = 28, ' ' = 29
+
+
+// E: Example, I am given an array of ['1', '2', '3'] , this would return 'abc'
+
+
+
+function switcher(x){
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz!? '
+    
+    let final = []
+    // split string into array and map as numbers
+    // compare number to letter position in alphabet
+    // push items into an array and join together
+    // return a string
+
+    let arr = x.map(Number)
+
+    for(let i = 0; i < arr.length; i++){
+              final.push(alphabet.indexOf(arr[i]))  
+        
+    }
+    console.log(final)
+
+    
+
+    }
+
+
+    switcher(['24', '12', '23', '22', '4', '26', '9', '8'])
+
+
+
+
+
+
+    // compare number item of array to index position of item in a string
