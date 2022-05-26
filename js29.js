@@ -50,3 +50,13 @@ last('man i need a taxi up to ubud')
 // [ 'the', 'time', 'are', 'we', 'climbing', 'volcano', 'up', 'what' ]
 // // should equal
 //  [ 'time', 'are', 'we', 'the', 'climbing', 'volcano', 'up', 'what' ]
+
+
+
+
+function duplicate(arr){
+    let arr2 = [1, 2, 3, 4, 5]
+    console.log(arr.concat(...arr2))
+}
+
+duplicate([1,2,3,4,5])
