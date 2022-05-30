@@ -69,11 +69,39 @@ function mxdiflg(a1, a2) {
 let aSum = 0;
 let bSum = 0;
 
-let aResult = a1.concat(...a1).join('').length
-let bResult = a2.concat(...a2).join('').length
+let arr1 = a1.sort((a, b) => a.length - b.length)
+let arr2 = a2.sort((a, b) => b.length - a.length)
+console.log(arr2[0].length - arr1[0].length)
 
-console.log(aResult > bResult ? aResult - bResult : bResult - aResult)
+
+// let aResult = a1.concat(...a1).join('').length
+// let bResult = a2.concat(...a2).join('').length
+
+// console.log(aResult > bResult ? aResult - bResult : bResult - aResult)
 
 }
 
 mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const angle = n => (n-2) * 180
+
+
+// function angle(n) {
+//     let sum = (n - 2) * 180
+//     return sum
+//   }
