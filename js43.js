@@ -9,14 +9,6 @@ Note that the number will always be non-negative (>= 0).
 */
 
 
-// function insertDash(num) {
-//     return num.toString().split('').reduce((acc, c, i, arr) => {
-//       if (i > 0 && Number(arr[i]) % 2 !== 0 && Number(arr[i - 1]) % 2 !== 0)
-//         acc = acc + '-';
-      
-//       return acc + c;
-//     }, '');
-//  }
 
  function insertDash(num){
     return num.toString().split('').reduce((acc, c, i, arr) => {
