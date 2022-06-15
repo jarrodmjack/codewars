@@ -34,7 +34,7 @@ function solution(fullText, searchText){
 // check how many times searchText is inside of fullText (.includes or maybe rig something up with replace?)
 // return how many times searchText is inside of fullText as an integer
 let count = 0
-let str = fullText.replaceAll(searchText, '-')
+let str = fullText.replace(searchText, '-')
 
 str = str.split('')
 for(let i = 0; i < str.length; i++){
