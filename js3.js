@@ -323,30 +323,49 @@ Explanation:
 
 
 
-function findEvenIndex(arr) {
-    // creating variable to store left side of array
+// function findEvenIndex(arr) {
+//     // creating variable to store left side of array
+//     let left = 0;
+//     // creating variable to store right side sum
+//     let right = arr.reduce((acc, c) => acc + c)
+//     /* loop through array length, if i is greater than 0 
+//     left plus/equals array item - 1
+//     right -= array item 
+//     doing this on each loop iteration makes the left sum become greater as
+//     the right sum becomes smaller due to it looping through the length
+//     of the array
+//     */
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i > 0) left += arr[i - 1]
+//         right -= arr[i]
+
+//         // if left is equal to right (sum on left is same as sum on right), return index 
+
+//         if (left == right) return i;
+
+//     }
+
+//     // else if no index creates an even sum, return -1
+//     return -1
+// }
+
+
+
+function findEvenIndex(arr){
+
     let left = 0;
-    // creating variable to store right side sum
-    let right = arr.reduce((acc, c) => acc + c)
-    /* loop through array length, if i is greater than 0 
-    left plus/equals array item - 1
-    right -= array item 
-    doing this on each loop iteration makes the left sum become greater as
-    the right sum becomes smaller due to it looping through the length
-    of the array
-    */
-    for (let i = 0; i < arr.length; i++) {
-        if (i > 0) left += arr[i - 1]
+    let right = arr.reduce((acc, c) => acc + c, 0)
+
+    for(let i = 0; i < arr.length; i++){
+        if(i > 0) left += arr[i-1]
         right -= arr[i]
 
-        // if left is equal to right (sum on left is same as sum on right), return index 
-
-        if (left == right) return i;
-
+        if(left == right) return i;
     }
 
-    // else if no index creates an even sum, return -1
+
     return -1
+
 }
 
-console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1])) // --> 3
+console.log(findEvenIndex([5,5,10,15,20])) // --> 3
