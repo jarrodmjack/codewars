@@ -63,48 +63,143 @@
 //   }
 
 
-// function wave(str){
-//     let arr = []
-//     for(let i = 0; i < str.length; i++){
-//         let copy = str.split('')
-//         if(copy[i] !== ' '){
-//             copy[i] = copy[i].toUpperCase()
-//             arr.push(copy.join(''))
+// // function wave(str){
+// //     let arr = []
+// //     for(let i = 0; i < str.length; i++){
+// //         let copy = str.split('')
+// //         if(copy[i] !== ' '){
+// //             copy[i] = copy[i].toUpperCase()
+// //             arr.push(copy.join(''))
+// //         }
+// //     }
+// //     return arr
+// // }
+
+//     // function wave(str){
+//     //     let arr = [];
+//     //     for(let i = 0; i < str.length; i++){
+//     //         let copy = str.split('')
+//     //         if(copy[i] !== ' '){
+//     //             copy[i] = copy[i].toUpperCase()
+//     //             arr.push(copy.join(''))
+//     //         }
+//     //     }
+//     //     return arr
+//     // }
+
+//     function wave(str){
+//         let arr = [];
+//         for(let i = 0; i < str.length; i++){
+//             let copy = str.split('')
+//             if(copy[i] !== ' '){
+//                 copy[i] = copy[i].toUpperCase()
+//                 console.log(copy.join(''))
+//             }
 //         }
 //     }
-//     return arr
-// }
 
-    // function wave(str){
-    //     let arr = [];
-    //     for(let i = 0; i < str.length; i++){
-    //         let copy = str.split('')
-    //         if(copy[i] !== ' '){
-    //             copy[i] = copy[i].toUpperCase()
-    //             arr.push(copy.join(''))
-    //         }
-    //     }
-    //     return arr
-    // }
-
-    function wave(str){
-        let arr = [];
-        for(let i = 0; i < str.length; i++){
-            let copy = str.split('')
-            if(copy[i] !== ' '){
-                copy[i] = copy[i].toUpperCase()
-                console.log(copy.join(''))
-            }
-        }
-    }
-
-  console.log(wave('hello'))
+//   console.log(wave('hello'))
 
 
 
 
 
-// let string1 = ' apple '
+// // let string1 = ' apple '
 // let string2 = 'apple'
 
 // string1.trim() === string2 ? console.log(true) : console.log(false)
+
+
+
+
+
+
+
+
+
+// function twoSum(numbers, target) {
+//     //   nested loop
+//     //   for each number in the numbers array, check if that number is equal to any number in the array
+
+//     // let curr = 0;
+ 
+//     // let sumCheck = 0;
+
+//     let arr = [];
+
+//     numbers.forEach((item, i) => {
+//         for(let j = 0; j < numbers.length; j++){
+        
+//             if(numbers[j] !== item){
+//                 if(numbers[j] + item === target){
+//                     arr.push(i)
+//                     arr.push(j)
+//                 }
+//             }
+//         }
+//     })
+
+
+//     // console.log(arr)
+
+//     let finalArr = [arr[0], arr[1]]
+//     console.log(finalArr)
+
+// }
+
+// twoSum([1, 2, 3], 4)
+
+
+
+// function twoSum(numbers, target) {
+//     //   nested loop
+//     //   for each number in the numbers array, check if that number is equal to any number in the array
+//     let arr = [];
+
+//     numbers.forEach((item, i) => {
+//         for(let j = 0; j < numbers.length; j++){
+            
+//             if(numbers[j] === item && i !== j){
+//                 if(numbers[j] + item === target){
+//                     arr.push(i)
+//                     arr.push(j)
+//                 }
+//             }
+//         }
+//     })
+
+//     let finalArr = [arr[0], arr[1]]
+//     console.log(finalArr)
+
+// }
+
+
+// twoSum([2, 2, 3], 4)
+
+
+
+
+
+
+
+// original with modification
+
+function twoSum(numbers, target) {
+    //   nested loop
+    //   for each number in the numbers array, check if that number is equal to any number in the array
+    let arr = [];
+    numbers.forEach((item, i) => {
+        for(let j = 0; j < numbers.length; j++){
+            if(numbers[j] !== item && j != i || numbers[j] === item && j !== i){
+                console.log(numbers[j])
+                if(numbers[j] + item === target){
+                    // console.log(i, j)
+                    arr.push(i)
+                    arr.push(j)
+                }
+            }
+        }
+    })
+    let finalArr = [arr[0], arr[1]]
+    console.log(finalArr)
+}
