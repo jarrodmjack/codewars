@@ -184,22 +184,22 @@
 
 // original with modification
 
-function twoSum(numbers, target) {
-    //   nested loop
-    //   for each number in the numbers array, check if that number is equal to any number in the array
-    let arr = [];
-    numbers.forEach((item, i) => {
-        for(let j = 0; j < numbers.length; j++){
-            if(numbers[j] !== item && j != i || numbers[j] === item && j !== i){
-                console.log(numbers[j])
-                if(numbers[j] + item === target){
-                    // console.log(i, j)
-                    arr.push(i)
-                    arr.push(j)
-                }
-            }
-        }
-    })
-    let finalArr = [arr[0], arr[1]]
-    console.log(finalArr)
-}
+// function twoSum(numbers, target) {
+//     //   nested loop
+//     //   for each number in the numbers array, check if that number is equal to any number in the array
+//     let arr = [];
+//     numbers.forEach((item, i) => {
+//         for(let j = 0; j < numbers.length; j++){
+//             if(numbers[j] !== item && j != i || numbers[j] === item && j !== i){
+//                 console.log(numbers[j])
+//                 if(numbers[j] + item === target){
+//                     // console.log(i, j)
+//                     arr.push(i)
+//                     arr.push(j)
+//                 }
+//             }
+//         }
+//     })
+//     let finalArr = [arr[0], arr[1]]
+//     console.log(finalArr)
+// }
