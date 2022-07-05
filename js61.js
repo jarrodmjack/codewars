@@ -19,46 +19,46 @@ odd() must return an array of all odd numbers
 
 
 
-let numbers = [1, 2, 3, 4, 5];
+// let numbers = [1, 2, 3, 4, 5];
 
-Array.prototype.square = function(){
-    let squaredArr = this.map(item => item**2)
-    return squaredArr
-}
+// Array.prototype.square = function(){
+//     let squaredArr = this.map(item => item**2)
+//     return squaredArr
+// }
 
-Array.prototype.cube = function(){
-    let newArr = this.map(item => item**3)
-    return newArr
-}
+// Array.prototype.cube = function(){
+//     let newArr = this.map(item => item**3)
+//     return newArr
+// }
 
-Array.prototype.average = function(){
-    if(!this){
-        return NaN
-    }
-    let result = this.reduce((acc, c) => acc + c, 0)
-    return result / this.length
-}
+// Array.prototype.average = function(){
+//     if(!this){
+//         return NaN
+//     }
+//     let result = this.reduce((acc, c) => acc + c, 0)
+//     return result / this.length
+// }
 
-Array.prototype.sum = function(){
-    let sum = this.reduce((acc, c) => acc + c)
-    return sum
-}
+// Array.prototype.sum = function(){
+//     let sum = this.reduce((acc, c) => acc + c)
+//     return sum
+// }
 
-Array.prototype.evens = function(){
-    let newArr = this.filter(item => item % 2 === 0)
-    return newArr
-}
+// Array.prototype.evens = function(){
+//     let newArr = this.filter(item => item % 2 === 0)
+//     return newArr
+// }
 
-Array.prototype.odds = function(){
-    let newArr = this.filter(item => item % 2 !== 0)
-    return newArr
-}
+// Array.prototype.odds = function(){
+//     let newArr = this.filter(item => item % 2 !== 0)
+//     return newArr
+// }
 
-console.log(numbers.square())
-console.log(numbers.cube())
-console.log(numbers.average())
-console.log(numbers.sum())
-console.log(numbers.evens())
-console.log(numbers.odds())
+// console.log(numbers.square())
+// console.log(numbers.cube())
+// console.log(numbers.average())
+// console.log(numbers.sum())
+// console.log(numbers.evens())
+// console.log(numbers.odds())
 
 // console.log(numbers.prototype.square())
