@@ -94,5 +94,12 @@ There will always be a missing element and its length will be always between the
 
 
 
-let arr = [null]
-console.log(typeof arr)
+// let arr = [null]
+// console.log(typeof arr)
+
+
+
+
+let news = [{name: 'Title 1'}, {name: 'Title 2'}, {name: 'Title 2'}]
+
+let arr = news.map(item => item.name)
