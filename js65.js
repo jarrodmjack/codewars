@@ -43,34 +43,57 @@ What if the string is empty? Then the result should be empty object literal, {}.
 
 
 
-function count (string) {  
-    
+// function count (string) {  
 
-    // test IF string is empty, if true, return an empty object literal, otherwise do the following:
 
-    // create variable to store -->  split string into separate words, then join together, then split again into array of letters
-    // put occurences into an object using the .reduce method on the array
-    // return object of occurences
+//     // test IF string is empty, if true, return an empty object literal, otherwise do the following:
 
-    if(!string || string.length === 0){
-        return {}
+//     // create variable to store -->  split string into separate words, then join together, then split again into array of letters
+//     // put occurences into an object using the .reduce method on the array
+//     // return object of occurences
+
+//     if(!string || string.length === 0){
+//         return {}
+//     }
+
+
+//     let letters = string.split(' ').join('').split('')
+
+//     let occurences = letters.reduce((acc, c) => {
+//         if(!acc[c]){
+//             acc[c] = 0
+//         }
+//         acc[c]++
+//         return acc
+//     }, {})
+
+//     console.log(occurences)
+
+
+//      return {};
+//   }
+
+//   count('apple')
+
+
+
+
+
+
+
+function sayHello(number) { //creating a function
+
+    if(number % 2 === 0){ //if condition is true (if number is even)
+        // do this
+        return 'Even'
+        
+    }else{ //if its odd
+        // do this
+       return 'Odd'
     }
 
 
-    let letters = string.split(' ').join('').split('')
-    
-    let occurences = letters.reduce((acc, c) => {
-        if(!acc[c]){
-            acc[c] = 0
-        }
-        acc[c]++
-        return acc
-    }, {})
-
-    console.log(occurences)
+}
 
 
-     return {};
-  }
-
-  count('apple')
+sayHello(10) //argument is the value put into the function call
