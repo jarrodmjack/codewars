@@ -97,46 +97,60 @@ A unit of time must be used "as much as possible". It means that the function sh
 
 // }
 
-function formatDuration(seconds){
+// function formatDuration(seconds){
 
-    const time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 }, res = []
+//     const time = { year: 31536000, day: 86400, hour: 3600, minute: 60, second: 1 }, res = []
 
-    if(seconds === 0) return 'now';
+//     if(seconds === 0) return 'now';
 
 
-    for(let key in time){
-        if(seconds >= time[key]){
-            let val = Math.floor(seconds / time[key])
-            res.push(val += val > 1 ? ` ${key}s` : ` ${key}`)
-            seconds = seconds % time[key]
-        }
+//     for(let key in time){
+//         if(seconds >= time[key]){
+//             let val = Math.floor(seconds / time[key])
+//             res.push(val += val > 1 ? ` ${key}s` : ` ${key}`)
+//             seconds = seconds % time[key]
+//         }
+//     }
+
+//     return res.length > 1 ? res.join(', ').replace(/,([^,]*)$/, ` and` + `$1`) : res[0]
+
+
+
+// }
+
+
+
+
+// console.log(formatDuration(159195342))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+String.prototype.camelCase = function(str){
+
+    let arr = this.split(' ')
+    let res = [];    
+    for(let i = 0; i < arr.length; i++){
+        res.push(`${arr[i][0].toUpperCase()}${arr[i].slice(1)}`)
     }
 
-    return res.length > 1 ? res.join(', ').replace(/,([^,]*)$/, ` and` + `$1`) : res[0]
 
+    console.log(res.join(''))
 
 
 }
 
-
-
-
-console.log(formatDuration(159195342))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'say hello'.camelCase()
 
 
 
