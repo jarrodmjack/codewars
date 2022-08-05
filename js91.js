@@ -46,6 +46,10 @@ Example 2: ('racer',  ['garer', 'cracer', 'carece', 'reacer'] ---> []) returns e
 */
 
 
+String.prototype.sort = function(){
+    return this.split('').sort().join('')
+}
+
 function anagrams(word, words) {
     // P:
     // create result array
@@ -57,25 +61,13 @@ function anagrams(word, words) {
     // I will push items from word array at indices[i] into result array
     // return result
 
-    let res = [];
-    let indices = [];
-
-    word = word.split('').sort().join('')
+    return words.filter(item => {
+        return item.sort() === word.sort()
+    });
     
-    for(let i = 0; i < words.length; i++){
-        let val = words[i].split('').sort().join('')
-        if(val === word){
-            indices.push(i)
-        }
-    }
-
-    for(let i = 0; i < indices.length; i++){
-        res.push(words[indices[i]])
-    }
-    console.log(res)
-
+   
 
 
 }
 
-anagrams('racer', ['crazer', 'racar', 'caers'])
+console.log(anagrams('racer', ['crazer', 'racar', 'caers', 'racer','cerar']))
