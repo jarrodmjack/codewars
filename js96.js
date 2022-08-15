@@ -157,7 +157,42 @@ function score(dice) {
     console.log(score)
 
 }
-score([1, 1, 1, 3, 5])
-score([5, 1, 3, 4, 1])
-score([1, 1, 1, 3, 1])
-score([2, 3, 4, 6, 2])
+
+
+
+
+
+
+
+    // const options = {
+    //     method: 'GET',
+    //     url: `https://bing-news-search1.p.rapidapi.com/news/search`,
+    //     params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
+    //     headers: {
+    //     'X-BingApis-SDK': 'true',
+    //     'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
+    //     'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+    // }
+    // };
+    
+    // fetch('https://bing-news-search1.p.rapidapi.com/news?safeSearch=Off&textFormat=Raw', options)
+    //     .then(response => response.json())
+    //     .then(response => console.log(response))
+    //     .catch(err => console.error(err));
+
+
+        // const options = {
+        //     method: 'GET',
+        //         url: `https://bing-news-search1.p.rapidapi.com/news/search`,
+        //         params: { q: `cryptocurrency`, freshness: 'Day', textFormat: 'Raw', safeSearch: 'Off' },
+        //         headers: {
+        //         'X-BingApis-SDK': 'true',
+        //         'X-RapidAPI-Key': 'db3e8ae18bmshd7bb610557d438fp1e9721jsneadf0cccb21c',
+        //         'X-RapidAPI-Host': 'bing-news-search1.p.rapidapi.com'
+        //     }
+        // };
+        
+        // fetch('https://bing-news-search1.p.rapidapi.com/news?category=ScienceAndTechnology&safeSearch=Off', options)
+        //     .then(response => response.json())
+        //     .then(response => console.log(response))
+        //     .catch(err => console.error(err));
