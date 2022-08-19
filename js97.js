@@ -61,7 +61,7 @@ function bingo(tickets, win){
 
     console.log(miniwins)
 
-    // return miniwins < win ? 'Loser!' : 'Winner!'
+    return miniwins < win ? 'Loser!' : 'Winner!'
 
 }
 
