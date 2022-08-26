@@ -190,73 +190,73 @@ The function should return: "PauL"
 
 // }
 
-function rank(st, we, n) {
-  //p:
-  // if participant array length is 0, return "No participants"
-  // if n > participant array length, return "Not enough participants"
-  // loop through array of names
-  // create a sum variable and add the length of the name, + the weight of each letter in the name according to the alphabet
-  // push each weight to a new array. must keep track of index of weight according to index of name in participants array
-  // find the person at rank n in the weights array and find that participant
-  // return participant
+// function rank(st, we, n) {
+//   //p:
+//   // if participant array length is 0, return "No participants"
+//   // if n > participant array length, return "Not enough participants"
+//   // loop through array of names
+//   // create a sum variable and add the length of the name, + the weight of each letter in the name according to the alphabet
+//   // push each weight to a new array. must keep track of index of weight according to index of name in participants array
+//   // find the person at rank n in the weights array and find that participant
+//   // return participant
 
-  // console.log(st, we, n)
+//   // console.log(st, we, n)
 
-  let alphabet = ".abcdefghijklmnopqrstuvwxyz"
-  let upperAlphabet = ".ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//   let alphabet = ".abcdefghijklmnopqrstuvwxyz"
+//   let upperAlphabet = ".ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-  let parts = st.split(',')
+//   let parts = st.split(',')
 
-  if (!st || st.length === 0) {
-    return 'No participants'
-  } else if (n > parts.length) {
-    return 'Not enough participants'
-  }
+//   if (!st || st.length === 0) {
+//     return 'No participants'
+//   } else if (n > parts.length) {
+//     return 'Not enough participants'
+//   }
 
-  let partsIdxs = {}
-  let partsObj = {}
+//   let partsIdxs = {}
+//   let partsObj = {}
 
-  for (let i = 0; i < parts.length; i++) {
-    partsIdxs[parts[i]] = i
-    partsObj[parts[i]] = parts[i].split('').map((ltr, i) => {
-      let sum = 0;
-      if (upperAlphabet.includes(ltr)) {
-        sum += upperAlphabet.indexOf(ltr)
-      } else if (alphabet.includes(ltr)) {
-        sum += alphabet.indexOf(ltr)
-      }
-      sum += 1
-      return sum
-    }).reduce((acc, c) => acc + c) * we[i]
-  }
-
-
-  let weights = [];
-  for(const key in partsObj){
-    weights.push(partsObj[key])
-  }
-  weights.sort((a, b) => b - a)
+//   for (let i = 0; i < parts.length; i++) {
+//     partsIdxs[parts[i]] = i
+//     partsObj[parts[i]] = parts[i].split('').map((ltr, i) => {
+//       let sum = 0;
+//       if (upperAlphabet.includes(ltr)) {
+//         sum += upperAlphabet.indexOf(ltr)
+//       } else if (alphabet.includes(ltr)) {
+//         sum += alphabet.indexOf(ltr)
+//       }
+//       sum += 1
+//       return sum
+//     }).reduce((acc, c) => acc + c) * we[i]
+//   }
 
 
-  let win = weights[n - 1]
-  let res = [];
-
-  for(const key in partsObj){
-    if(partsObj[key] === win){
-      res.push(key)
-    }
-  }
-  res.sort()
-  return res[n - weights.indexOf(win) - 1] 
+//   let weights = [];
+//   for(const key in partsObj){
+//     weights.push(partsObj[key])
+//   }
+//   weights.sort((a, b) => b - a)
 
 
-}
+//   let win = weights[n - 1]
+//   let res = [];
 
-console.log(rank("Elijah,Ethan,Emma,Olivai,Sophia,Sofia,Emily,Avery,Abigail,Aiden,Natalie,Madison,Aubrey,Ella,Benjamin,Mason,Jayden,Jacob,Matthew", [
-  3, 1, 5, 4, 4, 5, 1,
-  6, 2, 5, 2, 6, 6, 3,
-  6, 5, 2, 4, 1
-], 4))
+//   for(const key in partsObj){
+//     if(partsObj[key] === win){
+//       res.push(key)
+//     }
+//   }
+//   res.sort()
+//   return res[n - weights.indexOf(win) - 1] 
+
+
+// }
+
+// console.log(rank("Elijah,Ethan,Emma,Olivai,Sophia,Sofia,Emily,Avery,Abigail,Aiden,Natalie,Madison,Aubrey,Ella,Benjamin,Mason,Jayden,Jacob,Matthew", [
+//   3, 1, 5, 4, 4, 5, 1,
+//   6, 2, 5, 2, 6, 6, 3,
+//   6, 5, 2, 4, 1
+// ], 4))
 // console.log(rank("Elijah,Chloe,Elizabeth,Matthew,Natalie,Jayden", [ 1, 3, 5, 5, 3, 6 ], 2))
 // console.log(rank("COLIN,AMANDBA,AMANDAB,CAROL,PauL,JOSEPH", [1, 4, 4, 5, 2, 1], 4))
 // console.log(rank("Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin", [4, 2, 1, 4, 3, 1, 2], 4))
@@ -289,3 +289,19 @@ console.log(rank("Elijah,Ethan,Emma,Olivai,Sophia,Sofia,Emily,Avery,Abigail,Aide
 // let names = ["PauL", "JOSEPH"]
 
 // console.log(names.sort((a,b) => a - b))
+
+
+
+function rank(st, we, n){
+  let names = st.split(',')
+  if(!st.length) return "No participants"
+  if(names.length < n) return "Not enough participants"
+  return names.map((_, i) => ({
+    name:_,
+    s:[..._.toLowerCase()].reduce((a, b) => a + b.charCodeAt() - 95, 0) * we[i]
+  }))
+  .sort((a,b) => a.name > b.name)
+  .sort((a,b) => b.s - a.s)
+  [n-1].name
+}
+console.log(rank("Addison,Jayden,Sofia,Michael,Andrew,Lily,Benjamin", [4, 2, 1, 4, 3, 1, 2], 4))
