@@ -39,47 +39,84 @@ Example 2:
 [] ---> ""
 
 */
-function formatWords(array) {
-    //  P:
-    // create string variable
-    // loop through array of words
-    // if word is last in the array, join together with 'and'
-    // otherwise join together with a comma and a space
-    // return as a string
+// function formatWords(array) {
+//     //  P:
+//     // create string variable
+//     // loop through array of words
+//     // if word is last in the array, join together with 'and'
+//     // otherwise join together with a comma and a space
+//     // return as a string
 
-    if (!array || array.length === 0) {
-        return ''
-    }
-    let words = array.filter(item => item !== '')
-    console.log(words)
+//     if (!array || array.length === 0) {
+//         return ''
+//     }
+//     let words = array.filter(item => item !== '')
+//     console.log(words)
 
-    if (words.length === 1) {
-        return `${words[0]}`
-    }
-
-   
-
-    let formattedString = ''
-    for (let i = 0; i < words.length; i++) {
+//     if (words.length === 1) {
+//         return `${words[0]}`
+//     }
 
 
 
-        if (i === words.length - 1) {
-            formattedString += `and ${words[i]}`
-        } else if (i === words.length - 2) {
-            formattedString += `${words[i]} `
-        } else {
-            formattedString += `${words[i]}, `
-        }
-    }
-
-    return formattedString
-
-}
-console.log(formatWords(['', '', 'three']))
+//     let formattedString = ''
+//     for (let i = 0; i < words.length; i++) {
 
 
 
+//         if (i === words.length - 1) {
+//             formattedString += `and ${words[i]}`
+//         } else if (i === words.length - 2) {
+//             formattedString += `${words[i]} `
+//         } else {
+//             formattedString += `${words[i]}, `
+//         }
+//     }
+
+//     return formattedString
+
+// }
+// console.log(formatWords(['', '', 'three']))
+
+
+
+
+
+
+/* 
+Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.
+*/
+
+// PREP
+
+// *write the problem you are trying to solve*
+// We need to get the number of vowels in a string
+
+
+// P: *What are the parameters of*
+// Are we sure that the str parameter will always be a string value?
+// What would the length be? Unsure
+// str will only consist of letter and / or spaces
+// vowels will only consist of a, e , i , o , u
+
+
+
+// R: Return count of vowels as a number.
+
+
+// E: Examples
+/* 
+Example 1: 'apple' ---> returns 2 because there are only 2 vowels in the given string
+
+Example 2: '' ---> return 0 because its and empty string
+
+Example 3: 'Lizzy's 100 hours project idea is great!' ---> return 11 because the project is really cool.
+
+*/
 
 
 
