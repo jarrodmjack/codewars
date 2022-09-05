@@ -121,3 +121,20 @@ Example 3: 'Lizzy's 100 hours project idea is great!' ---> return 11 because the
 
 
 
+
+function getCount(str) {
+    
+    let counter = 0;
+    for(let i = 0; i < str.length; i++){
+        if('aeiou'.includes(str[i])){
+            counter ++
+        }
+    }
+
+    console.log(counter)
+
+}
+
+getCount("Lizzy's 100 hours project idea is great!")
+// getCount("apple")
+// getCount("aaaaaa")
