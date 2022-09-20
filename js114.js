@@ -62,11 +62,12 @@ would return
 
 */
 
-var list1 = [
-    { firstName: null, lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
-    { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null },
-    { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' } 
-  ];
+var list1 =
+    [
+        { firstName: null, lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+        { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: null },
+        { firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby' }
+    ];
 
 
 function askForMissingDetails(list) {
@@ -82,18 +83,19 @@ function askForMissingDetails(list) {
 
     let result = [];
 
-    for(let i = 0; i < list.length; i++){
-        for(const key in list[i]){
-            if(list[i][key] === null){
+    for (let i = 0; i < list.length; i++) {
+        for (const key in list[i]) {
+            if (list[i][key] === null) {
                 list[i].question = `Hi, could you please provide your ${key}?`
                 result.push(list[i])
-            } 
+            }
         }
     }
 
-    console.log(result)
+    return result
 
-  }
+    // Time complexity O(n*a)
+}
 
 askForMissingDetails(list1)
 
