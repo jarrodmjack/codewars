@@ -50,55 +50,99 @@ It is the same, so we break loop and return iteration count
 */
 
 
+// function shiftedDiff(first, second) {
+
+//     // check if first is equal to second and return -1
+//     // check if all items in first are included in second, return 1- 
+//     //else
+//     // new string variable to track new string (move front letter to back)
+//     // count variable to store iterations
+//     // for loop
+//     // on each iteration, move front letter to back, check if === second    
+
+//     if (first === second) {
+//         return 0
+//     }
+//     //check if they have same letters
+//     const same = sameLetterCheck(first, second)
+
+//     if (!same) {
+//         return -1
+//     }
+
+//     let count = 0
+//     let arr1 = first.split('')
+//     let arr2 = second.split('')
+
+//     let end = ''
+//     let string = arr1.join('')
+
+//     while (string !== second) {
+//         end = arr1.pop()
+//         arr1.unshift(end)
+//         string = arr1.join('')
+//         count++
+//         if (string === second) {
+//             return count
+//         }
+//     }
+
+
+// }
+
+
+// function sameLetterCheck(first, second) {
+//     let same = true
+//     for (let i = 0; i < first.length; i++) {
+//         if (!second.includes(first[i])) {
+//             same = false
+//         }
+//     }
+//     return same
+// }
+
+// console.log(shiftedDiff("Esham", "Esham"))
+
+
+
+
 function shiftedDiff(first, second) {
 
-    // check if first is equal to second and return -1
-    // check if all items in first are included in second, return 1- 
-    //else
-    // new string variable to track new string (move front letter to back)
-    // count variable to store iterations
-    // for loop
-    // on each iteration, move front letter to back, check if === second    
-
-    if (first === second) {
+    if (first == second) {
         return 0
     }
-    //check if they have same letters
-    const same = sameLetterCheck(first, second)
 
-    if (!same) {
+    let sameLetters = true
+
+    for (let i = 0; i < first.length; i++) {
+        if (!second.includes(first[i])) {
+            sameLetters = false
+        }
+    }
+
+    if (!sameLetters || first.length !== second.length) {
         return -1
     }
 
     let count = 0
-    let arr1 = first.split('')
-    let arr2 = second.split('')
+    let arr = first.split('')
+    let string = '';
 
-    let end = ''
-    let string = arr1.join('')
-
-    while (string !== second) {
-        end = arr1.pop()
-        arr1.unshift(end)
-        string = arr1.join('')
+    for (let i = 0; i < first.length; i++) {
+        let end = arr.pop()
+        arr.unshift(end)
+        string = arr.join('')
+        console.log(string)
         count++
         if (string === second) {
             return count
         }
     }
 
+  return -1
 
 }
 
 
-function sameLetterCheck(first, second) {
-    let same = true
-    for (let i = 0; i < first.length; i++) {
-        if (!second.includes(first[i])) {
-            same = false
-        }
-    }
-    return same
-}
-
-console.log(shiftedDiff("Esham", "Esham"))
+// console.log(shiftedDiff('coffee', 'ffeeco'))
+console.log(shiftedDiff('hoop', 'pooh'))
