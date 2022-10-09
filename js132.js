@@ -1,93 +1,42 @@
-/* 
-You are given a string of n lines, each substring being n characters long. For example:
 
-s = "abcd\nefgh\nijkl\nmnop"
 
-We will study the "horizontal" and the "vertical" scaling of this square of strings.
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
 
-A k-horizontal scaling of a string consists of replicating k times each character of the string (except '\n').
-
-Example: 2-horizontal scaling of s: => "aabbccdd\neeffgghh\niijjkkll\nmmnnoopp"
-A v-vertical scaling of a string consists of replicating v times each part of the squared string.
-
-Example: 2-vertical scaling of s: => "abcd\nabcd\nefgh\nefgh\nijkl\nijkl\nmnop\nmnop"
-Function scale(strng, k, v) will perform a k-horizontal scaling and a v-vertical scaling.
-
-Example: a = "abcd\nefgh\nijkl\nmnop"
-scale(a, 2, 3) --> "aabbccdd\naabbccdd\naabbccdd\neeffgghh\neeffgghh\neeffgghh\niijjkkll\niijjkkll\niijjkkll\nmmnnoopp\nmmnnoopp\nmmnnoopp"
-Printed:
-
-abcd   ----->   aabbccdd
-efgh            aabbccdd
-ijkl            aabbccdd
-mnop            eeffgghh
-                eeffgghh
-                eeffgghh
-                iijjkkll
-                iijjkkll
-                iijjkkll
-                mmnnoopp
-                mmnnoopp
-                mmnnoopp
-Task:
-Write function scale(strng, k, v) k and v will be positive integers. If strng == "" return "".
-*/
+// [2,2,1,1,1,2,2]
+// [1,1,1,1,2,2,2] <-- sorted
+// if array length is <= 2
+// sort array
+// get last index of first number in array
+// if last index is greater than (array length / 2)
+//return index 0 of array
+// else return last index
 
 
 
-// I will write a function that takes in a string, as well as 2 numbers. I will produce a new modified string
+// [2,2] ---> return index 0
 
 
-// P:
-// strng is a string of letters on new lines
-// I must multiply each character in each line by k
-// I must multiply each line by n
-// string could be empty
-// assuming all parameters will be entered
+var majorityElement = function (nums) {
 
-
-
-// R:
-// If string is empty, return empty string
-// else return the string with each letter multiplied k times, and each line multiplied n times
-
-
-
-// E:
-/* 
-strng = 'abc'
-k = 3
-n = 2
-
---> 'abcabcabc\nabcabcabc'
-
-*/
-
-
-function scale(strng, k, n){
-
-    // if strng is empty, return strng
-    // split string into array
-    // map and modify each character in the array according to k
-    // repeat each string n times
-    // join together and return
-
-    if(strng.length < 1){
-        return ""
-    }
-
-    let res = '';
-    let arr = strng.split('\n')
-    for(let i = 0; i < arr.length; i++){
-        let test = ''
-        for(let j = 0; j < arr[i].length; j++){
-            test += `${arr[i][j].repeat(k)}`
+    let hashmap = {};
+    let halfNumsLength = (nums.length / 2)
+    // console.log(halfNumsLength)
+    for (let i = 0; i < nums.length; i++) {
+        if(!hashmap[nums[i]]){
+            hashmap[nums[i]] = 0
         }
-        res += `${test}\n`.repeat(n)
+        hashmap[nums[i]] ++
+    }
+    for(const key in hashmap){
+        if(hashmap[key] > halfNumsLength){
+            return key
+        }
     }
 
-    console.log(res.slice(1, -1))
-}
+};
 
 
-scale("abcd\nefgh\nijkl\nmnop", 2, 3)
+majorityElement([3, 4, 3])
