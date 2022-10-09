@@ -56,7 +56,7 @@ var countDeafRats = function (town) {
 }
 
 // countDeafRats('O~~OO~~O~O~OO~~O P')
-countDeafRats('P O~ O~ ~O O~')
+// countDeafRats('P O~ O~ ~O O~')
 // countDeafRats('~O~O~O~O P')
 // countDeafRats('~O~O~O~OP ~O    ~OO~')
 
