@@ -32,18 +32,7 @@ The first element 80 is the total weight of team 1, and the second element 0 is 
 
 
 function rowWeights(array){
-    
-    // if(array === undefined){
-    //     return [0]
-    // }
 
-    // if(array === null){
-    //     return [0]
-    // }
-
-    // if(!Array.isArray){
-    //     return [0]
-    // }
 
     if(array.length === 1){
         return [array[0], 0]
